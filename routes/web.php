@@ -14,5 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+Route::get('/registration', function () {
+    return view('registration');
+});
+Route::get('/authorization', function () {
+    return view('authorization');
+});
+Route::get('/video', function () {
+    return view('video');
+});
+Route::get('/myvideo', function () {
+    return view('myvideo');
+});
+Route::get('/addvideo', function () {
+    return view('addvideo');
 });
