@@ -31,3 +31,6 @@ Route::get('/myvideo', function () {
 Route::get('/addvideo', function () {
     return view('addvideo');
 });
+Route::get('/admin', function () {
+    return view('admin.index');
+});
