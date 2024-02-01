@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +35,7 @@ Route::get('/addvideo', function () {
 Route::get('/admin', function () {
     return view('admin.index');
 });
+
+Route::post('authorization_validate', [UserController::class, 'authorization_validate'])->name('authorization_validate');
+Route::post('registration_validate', [UserController::class, 'registration_validate']);
+Route::get('sign_out', [UserController::class, 'sign_out']);
