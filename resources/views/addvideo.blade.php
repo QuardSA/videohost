@@ -1,8 +1,8 @@
 <x-header></x-header>
 <div class="container">
     <h2 class="text-center">Добавить видео</h2>
-    <form class="d-flex flex-column gap-2" method="POST" action="/registration_validate"
-        style="max-width:40%;margin:0 auto">
+    <form class="d-flex flex-column gap-2" method="POST" action="/addvideo_valid"
+        style="max-width:40%;margin:0 auto" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="exampleInputNickname">Название</label>
@@ -27,9 +27,9 @@
         </div>
         <label for="disabledSelect" class="form-label">Категория</label>
         <select id="disabledSelect" class="form-select" name="categories">
-        @foreach ($categories as $category)  
+        @foreach ($categories as $category)
           <option value="{{$category->id}}">{{$category->title_category}}</option>
-        @endforeach  
+        @endforeach
         </select>
         @error('categories')
         <div class="alert alert-danger" role="alert">

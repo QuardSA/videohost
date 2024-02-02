@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\video;
+use App\Models\comment;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -43,4 +44,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function videos() {
+        return $this->hasMany(video::class,'users','id');
+    }
+    public function comments() {
+        return $this->hasMany(comment::class, 'users', 'id');
+    }
 }

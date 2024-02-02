@@ -17,7 +17,7 @@ return new class extends Migration
                 $table->longText('description');
                 $table->foreignId('users')->references('id')->on('users');
                 $table->foreignId('categories')->references('id')->on('categories');
-                $table->foreignId('limites')->references('id')->on('videostatuses');
+                $table->foreignId('limites')->references('id')->on('limits');
                 $table->timestamps();
             });
         }
@@ -25,6 +25,6 @@ return new class extends Migration
 
     public function down(): void
     {
-       Schema::dropIfExists('videos'); 
+       Schema::dropIfExists('videos');
     }
 };

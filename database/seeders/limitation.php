@@ -13,7 +13,7 @@ class limitation extends Seeder
     public function run(): void
     {
         $date=Carbon::now();
-        DB::table('videostatuses')->insert([
+        DB::table('limits')->insert([
         ['title_limit'=>'Нет ограничений', 'created_at'=>$date, 'updated_at'=>$date],
         ['title_limit'=>'Нарушение', 'created_at'=>$date, 'updated_at'=>$date],
         ['title_limit'=>'Теневой бан', 'created_at'=>$date, 'updated_at'=>$date],
