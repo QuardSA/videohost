@@ -1,5 +1,6 @@
 <x-header></x-header>
 <div class="container d-flex justify-content-center flex-wrap flex-column">
+    <div class="addvideo border rounded-5 p-2 mb-2" style="max-width: 10rem"><a href="/addvideo" class="text-decoration-none text-dark">+ Добавить видео</a></div>
     <div class="card mb-3 ms-4" style="max-width: 95%">
         <div class="row g-0">
             <div class="col-md-4">

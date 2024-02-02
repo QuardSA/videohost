@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Artisan;
+use Database\Seeders\categories;
 
 return new class extends Migration
 {
@@ -11,13 +13,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('comment');
-            $table->foreignId('video')->references('id')->on('videos');
-            $table->foreignId('users')->references('id')->on('users');
+            $table->string('title_category');
             $table->timestamps();
         });
+
+        Artisan::call('db:seed', ['--class'=>categories::class]);
     }
 
     /**
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('categories');
     }
 };

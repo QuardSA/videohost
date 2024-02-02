@@ -21,7 +21,7 @@ class UserController extends Controller
             ],
             [
                 'nickname.required' => 'Поле обязательно для заполнения',
-                // 'nickname.nickname' => 'Введите nickname',
+                'nickname.nickname' => 'Введите nickname',
                 'nickname.unique' => 'Данный nickname уже занят',
                 'email.required' => 'Поле обязательно для заполнения',
                 'email.email' => 'Введите email',
@@ -39,7 +39,7 @@ class UserController extends Controller
         ]);
         if ($userCreate) {
             Auth::login($userCreate);
-            return redirect('/')->with('success', 'Вы зарегестрировались');
+            return redirect('/')->with('success', 'Вы зарегистрировались');
         } else {
             return redirect('/registration')->with('error', 'Ошибка регистрации');
         }
