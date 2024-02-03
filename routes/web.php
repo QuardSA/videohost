@@ -14,6 +14,7 @@ use App\Http\Controllers\MainController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('/addvideo', function () {
     return view('addvideo');
 });
@@ -26,7 +27,7 @@ Route::get('/authorization', function () {
     return view('authorization');
 });
 
-Route::get('/{id}/video', [VideoControllers::class, 'Video_view']);
+Route::get('/{id}/video', [MainController::class, 'video_view']);
 
 Route::get('/myvideo', function () {
     return view('myvideo');
