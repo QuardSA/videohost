@@ -43,7 +43,6 @@ class MainController extends Controller
                 ],
             );
             $infoRolic=$request->all();
-            $author=Auth::user()->id;
 
             $video_info = $request->file('video')->hashName();
             $path_video = $request->file('video')->store('/public/video');
@@ -52,7 +51,7 @@ class MainController extends Controller
                 "title_video" => $infoRolic['title_video'],
                 'video' => $video_info,
                 "description" =>  $infoRolic['description'],
-                "users" => $author,
+                "users" => Auth::user()->id,
                 "categories" => $infoRolic['categories'],
                 "limites" => 1,
             ]);
